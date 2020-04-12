@@ -15,7 +15,7 @@ export const myWorld = () => ({
     component: { HelloWorld },
     data() {
         return {
-            msg: 'Hi there, how are you?'
+            msg: 'Vue.js App'
         }
     },
     template: '<hello-world :msg="msg" />',
