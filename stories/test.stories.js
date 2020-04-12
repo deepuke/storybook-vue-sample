@@ -1,6 +1,7 @@
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
+import VueI18n from 'vue-i18n';
 import HelloWorld from '../src/components/HelloWorld';
 
 export default {
@@ -11,12 +12,22 @@ export default {
 
 export const myWorld = () => ({
 
-    component:{HelloWorld},
+    component: { HelloWorld },
     data() {
         return {
             msg: 'Hi there, how are you?'
-        } 
+        }
     },
-    template : '<hello-world :msg="msg" />'
-
+    template: '<hello-world :msg="msg" />',
+    i18n: new VueI18n({
+        locale: 'de',
+        messages: {
+            en: {
+                subtext: "Welcome to Your"              
+            },
+            de: {
+                subtext : "Willkommen bei Ihnen"               
+            }
+        }
+    })
 });
