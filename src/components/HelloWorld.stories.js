@@ -1,8 +1,10 @@
 import VueI18n from 'vue-i18n';
 import HelloWorld from './HelloWorld';
+import en from '../locales/en.json';
+import de from '../locales/de.json';
 
 export default {
-    title: 'Application',
+    title: 'Hello World',
     component: HelloWorld,
 };
 
@@ -19,12 +21,8 @@ export const myWorld = () => ({
     i18n: new VueI18n({
         locale: 'de',
         messages: {
-            en: {
-                subtext: "Welcome to Your"
-            },
-            de: {
-                subtext: "Willkommen bei Ihnen"
-            }
+            en: en,
+            de: de
         }
     })
 });
