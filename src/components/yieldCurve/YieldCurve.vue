@@ -1,20 +1,31 @@
 <template>
   <div>
-    <h3>Yield Curve Chart</h3>
-    <highcharts :options="chartOptions" :callback="chartCallback"></highcharts>
+    <highcharts :options="chartOptions"></highcharts>
   </div>
 </template>
 <script>
 export default {
   name: "YieldCurve",
   props: {
-    chartData: []
+    chartData: {
+      type: Array,
+      default: () => {
+        return [
+          { y: 0.3, x: 1 },
+          { y: 0.9, x: 2 }
+        ];
+      }
+    }
   },
+
   data() {
     return {
       chartOptions: {
+        chart: {
+          height: 300
+        },
         series: [
-          {            
+          {
             data: this.chartData
           }
         ]
@@ -28,3 +39,7 @@ export default {
   }
 };
 </script>
+
+<style lang="sass" scoped>
+
+</style>
